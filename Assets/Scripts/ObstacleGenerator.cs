@@ -1,4 +1,5 @@
 using UnityEngine;
+// using Unity.Mathematics; <--- TO USUN¥£EM, BO POWODOWA£O B£¥D Z RANDOM
 
 public class ObstacleGenerator : MonoBehaviour
 {
@@ -8,26 +9,41 @@ public class ObstacleGenerator : MonoBehaviour
 
     void Update()
     {
-        if (Time.time > licznik)
+        
+        if (Time.time > licznik && GameManager.isGameOver == false)
         {
-            if (Time.time > licznik && GameManager.isGameOver == false)
-            {
-                GameManager.GlobalSpeed += 2f;
-                licznik += 10f;
-                SpawnObstacle();
-                licznik = Time.time + spawnInterval;
-            }
-            //SpawnObstacle();
-            //licznik = Time.time + spawnInterval;
-
+            SpawnObstacle();
+            licznik = Time.time + spawnInterval;
         }
     }
 
     void SpawnObstacle()
     {
-        float randomX = Random.Range(-10f, 10f);
-        Debug.Log("Wylosowano: " + randomX);
+        
+        float[] lanes = { -6f, -2f, 2f, 6f };
+
+        int laneIndex = Random.Range(0, lanes.Length);
+        float randomX = lanes[laneIndex];
+
+        
+        Quaternion rotation = Quaternion.identity;
+        float additionalSpeed = 0f;
+
+        if (laneIndex <= 1)
+        {
+            additionalSpeed = 20f; // Szybko w nasz¹ stronê
+            rotation = Quaternion.Euler(0, 180, 0); // Obrót o 180 stopni
+        }
+        else
+        {
+            additionalSpeed = -5f; // Uciekaj¹ przed nami
+            rotation = Quaternion.identity; // Normalnie
+        }
+
         Vector3 spawnPosition = new Vector3(randomX, 0, transform.position.z);
-        Instantiate(obstaclePrefab, spawnPosition, obstaclePrefab.transform.rotation);
+                
+        GameObject NewCar = Instantiate(obstaclePrefab, spawnPosition, rotation);
+
+        NewCar.GetComponent<ObstacleMovement>().customSpeed = additionalSpeed;
     }
 }

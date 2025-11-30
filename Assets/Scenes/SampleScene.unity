@@ -164,6 +164,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   completeLevelUI: {fileID: 0}
+--- !u!4 &94164294 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8649615231274301767, guid: 041e4e3100f07184cacfe35dce34f022, type: 3}
+  m_PrefabInstance: {fileID: 977632349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +692,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be08304fe5c3f5244aab70ed7d147c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  predkosc: 5
+  predkoscBoczna: 10
+  plynnoscSkretu: 10
+  katPochylenia: 5
+  model3D: {fileID: 977632350}
+  rightWheel: {fileID: 1434354583}
+  leftWheel: {fileID: 94164294}
+  katSkretu: 30
 --- !u!54 &799707251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1125,7 +1136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleGenerator
   obstaclePrefab: {fileID: 1468608934243038214, guid: 92c740c6f719aa04d8e279b039edc01d, type: 3}
-  spawnInterval: 2
+  spawnInterval: 1
 --- !u!4 &1335113899
 Transform:
   m_ObjectHideFlags: 0
@@ -1267,6 +1278,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FloorMovement
   tileLength: 50
+--- !u!4 &1434354583 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 697401578307552650, guid: 041e4e3100f07184cacfe35dce34f022, type: 3}
+  m_PrefabInstance: {fileID: 977632349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1721702074
 GameObject:
   m_ObjectHideFlags: 0
