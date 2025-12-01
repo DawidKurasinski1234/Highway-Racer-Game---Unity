@@ -6,6 +6,8 @@ public class Movement : MonoBehaviour
     public float plynnoscSkretu = 5.0f;
     public float katPochylenia = 10.0f;
 
+    public Transform RightLight;
+    public Transform LeftLight;
     public Transform model3D;
     public Transform rightWheel;
     public Transform leftWheel;
@@ -44,10 +46,14 @@ public class Movement : MonoBehaviour
                 // Oœ Y (druga liczba) odpowiada za skrêcanie lewo/prawo.
                 // Quaternion.Euler(X, Y, Z)
                 Quaternion rotacjaKol = Quaternion.Euler(0, aktualnyKat, 0);
+                Quaternion rotacjaLamp = Quaternion.Euler(0, aktualnyKat, 0);
 
                 // Przypisujemy do kó³ (u¿ywamy localRotation, ¿eby skrêca³y wzglêdem auta)
                 leftWheel.localRotation = rotacjaKol;
                 rightWheel.localRotation = rotacjaKol;
+
+                LeftLight.localRotation = rotacjaLamp;
+                RightLight.localRotation = rotacjaLamp;
             }
         }
     }
