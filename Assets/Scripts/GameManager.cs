@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameOver)
         {
-            GlobalSpeed += 0.5f * Time.deltaTime;
+            GlobalSpeed += 1f * Time.deltaTime;
         }
     }
 

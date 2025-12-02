@@ -14,7 +14,7 @@ public class FloorMovement : MonoBehaviour
             if (transform.position.z < -tileLength)
             {
 
-                transform.position += new Vector3(0, 0, tileLength * 2);
+                transform.position += new Vector3(0, 0, tileLength * 5);
             }
         }   
     }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ObstacleGenerator : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject [] obstaclePrefabs;
     public float spawnInterval = 2f;
     float licznik = 0f;
 
@@ -19,30 +19,38 @@ public class ObstacleGenerator : MonoBehaviour
 
     void SpawnObstacle()
     {
-        
-        float[] lanes = { -6f, -2f, 2f, 6f };
-
+        float[] lanes = { -6.75f, -2.5f, 2.5f, 6.75f };
         int laneIndex = Random.Range(0, lanes.Length);
         float randomX = lanes[laneIndex];
 
-        
-        Quaternion rotation = Quaternion.identity;
+        // Wybieramy model
+        int losowyModelIndex = Random.Range(0, obstaclePrefabs.Length);
+        GameObject wybranyPrefab = obstaclePrefabs[losowyModelIndex];
+
+        Quaternion finalnaRotacja;
         float additionalSpeed = 0f;
 
-        if (laneIndex <= 1)
+        // Logika pasów
+        if (laneIndex <= 1) // Lewa strona (Auta jad¹ NA NAS)
         {
-            additionalSpeed = 20f; // Szybko w nasz¹ stronê
-            rotation = Quaternion.Euler(0, 180, 0); // Obrót o 180 stopni
+            additionalSpeed = 30f;
+            // Obrót 180 stopni = widzimy maskê samochodu
+            finalnaRotacja = Quaternion.Euler(0, 180, 0);
         }
-        else
+        else // Prawa strona (Auta jad¹ Z NAMI)
         {
-            additionalSpeed = -5f; // Uciekaj¹ przed nami
-            rotation = Quaternion.identity; // Normalnie
+            additionalSpeed = 8f;
+            // Obrót 0 stopni = widzimy baga¿nik samochodu
+            finalnaRotacja = Quaternion.Euler(0, 0, 0);
         }
 
         Vector3 spawnPosition = new Vector3(randomX, 0, transform.position.z);
-                
-        GameObject NewCar = Instantiate(obstaclePrefab, spawnPosition, rotation);
+
+        int randomModelIndex = Random.Range(0, obstaclePrefabs.Length);
+
+        GameObject chosenPrefab = obstaclePrefabs[randomModelIndex];
+
+        GameObject NewCar = Instantiate(chosenPrefab, spawnPosition, finalnaRotacja);
 
         NewCar.GetComponent<ObstacleMovement>().customSpeed = additionalSpeed;
     }
