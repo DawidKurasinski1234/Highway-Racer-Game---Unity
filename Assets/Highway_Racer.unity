@@ -1161,9 +1161,6 @@ GameObject:
   - component: {fileID: 799707250}
   - component: {fileID: 799707251}
   - component: {fileID: 799707252}
-  - component: {fileID: 799707254}
-  - component: {fileID: 799707253}
-  - component: {fileID: 799707255}
   - component: {fileID: 799707256}
   m_Layer: 0
   m_Name: Player
@@ -1322,139 +1319,6 @@ MonoBehaviour:
   movement: {fileID: 799707250}
   gameManager: {fileID: 50524603}
   score: {fileID: 884104354}
---- !u!114 &799707253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799707245}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a91c73f70e9ac49af686116e2063a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EngineSound
-  silnikAudio: {fileID: 799707254}
-  minPitch: 0.8
-  maxPitch: 2
-  szybkoscWkrecania: 1
---- !u!82 &799707254
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799707245}
-  m_Enabled: 0
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: df95377110e206f44a9892d0c9e178ed, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.3
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &799707255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799707245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79246366cec0ab34590533f5907b60f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  silnikAudio: {fileID: 799707254}
-  iloscBiegow: 6
-  aktualnyBieg: 1
-  minPitch: 0.3
-  maxPitch: 1.5
-  redukcjaPrzyZmianie: 0.7
-  szybkoscWkrecania: 0.2
-  szybkoscSpadania: 3
 --- !u!114 &799707256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1468,12 +1332,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   clipLow: {fileID: 8300000, guid: ba69d12f28d04434e908432da4e083b1, type: 3}
-  clipMid: {fileID: 8300000, guid: 3ccf4794c94a5e54ba58982dc72c9bd5, type: 3}
-  clipHigh: {fileID: 8300000, guid: 31b4d2af3fd38a74d982c218f83ab926, type: 3}
-  iloscBiegow: 7
-  szybkoscWkrecania: 0.2
+  clipMid: {fileID: 8300000, guid: 31b4d2af3fd38a74d982c218f83ab926, type: 3}
+  clipHigh: {fileID: 8300000, guid: dc3a493eab9d6b74c8ec631a2ab65c72, type: 3}
+  iloscBiegow: 5
+  szybkoscWkrecania: 0.3
   szybkoscSpadania: 2
-  redukcjaPrzyZmianie: 0.8
+  redukcjaPrzyZmianie: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

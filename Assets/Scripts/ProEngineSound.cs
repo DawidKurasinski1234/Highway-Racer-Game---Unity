@@ -52,7 +52,7 @@ public class ProEngineSound : MonoBehaviour
                 currentRPM += Time.deltaTime * szybkoscWkrecania;
 
                 // Zmiana biegu
-                if (currentRPM >= 2.5f && aktualnyBieg < iloscBiegow) // 2.5 to próg zmiany
+                if (currentRPM >= 2.0f && aktualnyBieg < iloscBiegow) // 2.5 to próg zmiany
                 {
                     aktualnyBieg++;
                     currentRPM -= redukcjaPrzyZmianie;
