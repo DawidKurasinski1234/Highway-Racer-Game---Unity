@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
     public static bool isGameOver = false;
     public GameObject completeLevelUI;
     public static float GlobalSpeed = 10f;
+    public static float maxSpeed = 50f;
 
     private void Start()
     {
+        maxSpeed = 50f;
         GlobalSpeed = 10f;
         isGameOver = false;
     }
@@ -16,7 +18,10 @@ public class GameManager : MonoBehaviour
     {
         if (!isGameOver)
         {
-            GlobalSpeed += 1f * Time.deltaTime;
+            maxSpeed += 0.5f * Time.deltaTime;
+            GlobalSpeed = Mathf.Lerp(GlobalSpeed, Input.GetAxis("Vertical") * maxSpeed, 0.5f* Time.deltaTime);
+            GlobalSpeed = Mathf.Clamp(GlobalSpeed, 0, maxSpeed);
+
         }
     }
 

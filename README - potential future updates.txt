@@ -7,5 +7,6 @@ Car colour/model change
 Economy system 
 More maps
 Maybe fuel (?) system
+Player movement change (use of W for throttle and S for brake)
 
 

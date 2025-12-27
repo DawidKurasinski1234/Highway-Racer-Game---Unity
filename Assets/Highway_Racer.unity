@@ -1161,7 +1161,6 @@ GameObject:
   - component: {fileID: 799707250}
   - component: {fileID: 799707251}
   - component: {fileID: 799707252}
-  - component: {fileID: 799707256}
   m_Layer: 0
   m_Name: Player
   m_TagString: Obstacle
@@ -1319,25 +1318,6 @@ MonoBehaviour:
   movement: {fileID: 799707250}
   gameManager: {fileID: 50524603}
   score: {fileID: 884104354}
---- !u!114 &799707256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799707245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f60a4ab00f8a144399ffc74933112e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  clipLow: {fileID: 8300000, guid: ba69d12f28d04434e908432da4e083b1, type: 3}
-  clipMid: {fileID: 8300000, guid: 31b4d2af3fd38a74d982c218f83ab926, type: 3}
-  clipHigh: {fileID: 8300000, guid: dc3a493eab9d6b74c8ec631a2ab65c72, type: 3}
-  iloscBiegow: 5
-  szybkoscWkrecania: 0.3
-  szybkoscSpadania: 2
-  redukcjaPrzyZmianie: 1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,7 +2188,7 @@ MonoBehaviour:
   - {fileID: 1468608934243038214, guid: 92c740c6f719aa04d8e279b039edc01d, type: 3}
   - {fileID: 7177088827578011372, guid: 599a685950eacd0488b9abf6ff5388c9, type: 3}
   - {fileID: 3304199381720177095, guid: f07dcc497225dbc4fafc6fb26e56a399, type: 3}
-  spawnInterval: 1
+  spawnInterval: 0.7
 --- !u!4 &1335113899
 Transform:
   m_ObjectHideFlags: 0

@@ -10,6 +10,7 @@ public class ObstacleGenerator : MonoBehaviour
     void Update()
     {
         
+
         if (Time.time > licznik && GameManager.isGameOver == false)
         {
             SpawnObstacle();
@@ -31,6 +32,8 @@ public class ObstacleGenerator : MonoBehaviour
         float additionalSpeed = 0f;
 
         // Logika pasów
+        bool isRightLane = false;
+
         if (laneIndex <= 1) // Lewa strona (Auta jad¹ NA NAS)
         {
             additionalSpeed = 30f;
@@ -39,6 +42,7 @@ public class ObstacleGenerator : MonoBehaviour
         }
         else // Prawa strona (Auta jad¹ Z NAMI)
         {
+            isRightLane = true;
             additionalSpeed = 8f;
             // Obrót 0 stopni = widzimy baga¿nik samochodu
             finalnaRotacja = Quaternion.Euler(0, 0, 0);
@@ -53,5 +57,7 @@ public class ObstacleGenerator : MonoBehaviour
         GameObject NewCar = Instantiate(chosenPrefab, spawnPosition, finalnaRotacja);
 
         NewCar.GetComponent<ObstacleMovement>().customSpeed = additionalSpeed;
+        
+
     }
 }
